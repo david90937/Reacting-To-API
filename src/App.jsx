@@ -38,7 +38,8 @@ const App = () => {
             setHome('')
             fetch('https://ghibliapi.herokuapp.com/films/')
                 .then(response => response.json())
-                .then(films => setFilms(films));
+                .then(films => setFilms(films))
+                .catch(err => console.log(err));
         }
         else {
             setFilms([])
@@ -49,7 +50,8 @@ const App = () => {
             setHome('')
             fetch('https://ghibliapi.herokuapp.com/people/')
                 .then(response => response.json())
-                .then(people => setPeople(people));
+                .then(people => setPeople(people))
+                .catch(err => console.log(err));
         }
         else {
             setPeople([]);
